@@ -19,13 +19,13 @@ enabled. For neovim it requires the Ruby gem `neovim` to be installed._
 
 ## Usage
 
-This plugin adds the motion to `gk` in normal mode.
+This plugin adds the motion to `gsc` in normal mode.
 
 Examples:
 
-- `gkj` => Sorts the current line and the one below it concentricly.
-- `gkip` => Sorts the current paragraph concentricly.
-- `gkii` => Sorts the current indentation level concentricly (requires [text-obj-indent plugin][])
+- `gscj` => Sorts the current line and the one below it concentricly.
+- `gscip` => Sorts the current paragraph concentricly.
+- `gscii` => Sorts the current indentation level concentricly (requires [text-obj-indent plugin][])
 
 [text-obj-indent plugin]: https://github.com/kana/vim-textobj-indent
 

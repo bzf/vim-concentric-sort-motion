@@ -55,4 +55,4 @@ function! ConcentricSort(type, ...)
   call ResetCursorPosition()
 endfunction
 
-nmap <silent> gk :set opfunc=ConcentricSort<CR>g@
+nmap <silent> gsc :set opfunc=ConcentricSort<CR>g@

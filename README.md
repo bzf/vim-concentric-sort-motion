@@ -14,7 +14,7 @@ Plug 'bzf/vim-concentric-sort-motion'
 
 then run `:PlugInstall` from inside `vim`.
 
-_NOTE: This plugin requires that vim has been compiled with the +ruby feature
+> _NOTE: This plugin requires that vim has been compiled with the +ruby feature
 enabled. For neovim it requires the Ruby gem `neovim` to be installed._
 
 ## Usage

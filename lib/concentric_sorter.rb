@@ -16,18 +16,27 @@ class ConcentricSorter
   def sort_lines_concentricly
     @lines
       .map { |line| calculate_concentric_index(line) }
+      .reject(&:nil?)
       .sort_by { |a| a.first || -1 }
       .map { |result| result[1] }
+      .concat @unknowns.sort
   end
 
   def calculate_concentric_index(line)
     line_property = line.split(':').first.strip
     index = CONCENTRIC_ORDER.find_index { |property| line_property == property }
-    [index, line]
+
+    if index.nil?
+      @unknowns.push line
+      nil
+    else
+      [index, line]
+    end
   end
 
   def initialize(lines)
     @lines = lines
+    @unknowns = []
   end
 end
 

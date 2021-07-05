@@ -1,6 +1,5 @@
 concentric-sort-motion.vim
 ==========================
-[![CircleCI](https://circleci.com/gh/bzf/vim-concentric-sort-motion.svg?style=svg)](https://circleci.com/gh/bzf/vim-concentric-sort-motion)
 
 Adds a motion for sorting CSS attributes using the [concentric style guide][1].
 

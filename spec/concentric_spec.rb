@@ -49,6 +49,25 @@ RSpec.describe ConcentricSorter do
     ]
   end
 
+  it 'sorts flex-direction before align-items' do
+    css_attributes = <<-CSS
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    CSS
+
+    sorted_attributes = ConcentricSorter.sort(css_attributes.lines)
+
+    expect(css_attributes.lines.length).to eq sorted_attributes.length
+    expect(sorted_attributes.map(&:strip)).to eq [
+      'display: flex;',
+      'flex-direction: row;',
+      'align-items: center;',
+      'justify-content: space-between;'
+    ]
+  end
+
   context "when there's unknown attributes" do
     it 'sorts them alphabetically and puts them at the end' do
       css_attributes = <<-CSS
@@ -66,8 +85,8 @@ RSpec.describe ConcentricSorter do
         'z-index: 1000;',
         'background-image: url("");',
         'padding-bottom: 20px;',
-        'foobar: 1;',
-        'pointer-events: none;'
+        'pointer-events: none;',
+        'foobar: 1;'
       ]
     end
   end
